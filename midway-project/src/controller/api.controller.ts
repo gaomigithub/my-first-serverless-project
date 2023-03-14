@@ -1,4 +1,4 @@
-import { Inject, Controller, Get, Query } from '@midwayjs/core';
+import { Inject, Controller, Get, Query, Post } from '@midwayjs/core';
 import { Context } from '@midwayjs/koa';
 import { UserService } from '../service/user.service';
 
@@ -14,5 +14,10 @@ export class APIController {
   async getUser(@Query('uid') uid) {
     const user = await this.userService.getUser({ uid });
     return { success: true, message: 'OK', data: user };
+  }
+
+  @Post('/submit')
+  async updateData() {
+    return 'This is a POST method "/submit".';
   }
 }

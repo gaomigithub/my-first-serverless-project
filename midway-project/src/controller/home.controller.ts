@@ -3,7 +3,8 @@ import { Controller, Get } from '@midwayjs/core';
 @Controller('/')
 export class HomeController {
   @Get('/')
-  async home(): Promise<string> {
+  @Get('/main')
+  async home() {
     return 'Hello Midwayjs!';
   }
 }
